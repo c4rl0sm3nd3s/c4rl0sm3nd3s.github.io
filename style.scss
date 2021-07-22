@@ -1,5 +1,4 @@
-<style>
-	html,body{
+html,body{
 	margin: 0;
 	width: 100%;
 	height: 100%;
@@ -7,16 +6,16 @@
 }
 
 body {
-	background: url('clouds.gif');
+	background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/131442/90swallpaper.jpg');
 }
 
 .container {
-
+	background: #222;
 	position: relative;
 	resize: both;
 	overflow: auto;
 	width: 600px;
-	height: 700px;
+	height: 450px;
 }
 
 .browser-frame { 
@@ -52,7 +51,7 @@ body {
 
 main {
 	padding: 10px 0;
-	background: url('stars.gif');
+	background: #222;
 	text-align: center;
 	color: aqua;
 	height: 100%;
@@ -65,7 +64,7 @@ main {
 	align-items: center;
 	justify-content: center;
 	img {
-		width: 50%;
+		width: 60px;
 		flex-grow: 0;
 		flex-shrink: 0;
 		margin: 0 20px
@@ -74,11 +73,10 @@ main {
 
 h1 { margin: 0; }
 
-.mini {
-	width: 30%;
+img {
+	width: 80%;
 	height: auto;
 }
-
 
 table, td {
 	margin: 20px auto;
@@ -116,50 +114,3 @@ a {
 	height: 20px;
 	cursor: nw-resize !important;
 }
-</style>
-
-
-<div class="container browser-frame center">
-	<div id="drag-handle"></div>
-	<main class="content" > 
-		<div class="couldnt-do-this-in-the-90s">
-			<img class ="mini" src="visitor.webp">
-		</div>
-		<br>	
-		<h1>Carlos Mendes Webpage</h1>
-		<br>
-		<div class="couldnt-do-this-in-the-90s">
-			<img src="welcome.gif">
-	</div>
-		<p></p>
-		<table>
-			<tr><td>Resume:</td><td>ONLINE 	CV</td></tr>
-			<tr><td>Download CV:</td><td>Click here for my updated CV</td></tr>
-			<tr><td>Follow Me:</td><td><a target="_blank"   href="https://twitter.com/c4rl0sm3nd3s">@c4rl0sm3nd3s</a></td></tr>
-		</table>
-		
-
-		<img  width="600px" height="240px"  src="graphic_design_is_my_passion.png" alt="people learning to code">
-
-	</main>
-
-
-</div>
-
-<script>
-	target = $('.browser-frame');
-Draggable.create(target, { trigger: "#drag-handle"});
-
-var handleResize = $("<div class='resize-handle'></div>").appendTo(target);
-
-Draggable.create(handleResize, {
-	type:"top,left",
-	onPress: function(e) {
-		e.stopPropagation(); 
-	},
-	onDrag: function(e) {
-		parent = this.target.parentNode
-		TweenLite.set(parent, { width: this.x, height: this.y - 802 - 55});
-	}
-});
-</script>
